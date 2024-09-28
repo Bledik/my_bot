@@ -15,6 +15,7 @@ COPY . .
 
 # Expose any ports if necessary (not required for Telegram bots)
 # EXPOSE 80
+EXPOSE 80
 
 # Command to run your bot
 CMD ["py", "main.py"]
