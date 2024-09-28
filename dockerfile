@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 80
 
 # Command to run your bot
-CMD ["py", "main.py"]
+CMD ["python", "main.py"]
