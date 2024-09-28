@@ -5,8 +5,10 @@ import sys
 from aiogram import Bot, Dispatcher, html
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
-from aiogram.filters import CommandStart
+from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
+
+import datetime as dt
 
 # Bot token can be obtained via https://t.me/BotFather
 TOKEN = "7278215203:AAEgxlwIUw4dg0rEKbjLWGC0uxNb47c8HyU"
@@ -28,6 +30,17 @@ async def command_start_handler(message: Message) -> None:
     # Bot instance: `bot.send_message(chat_id=message.chat.id, ...)`
     await message.answer(f"Hello, {html.bold(message.from_user.full_name)}!")
 
+@dp.message(Command("data"))
+async def command_data_handler(message: Message) -> None:
+    """
+    This handler receives messages with `/start` command
+    """
+    # Most event objects have aliases for API methods that can be called in events' context
+    # For example if you want to answer to incoming message you can use `message.answer(...)` alias
+    # and the target chat will be passed to :ref:`aiogram.methods.send_message.SendMessage`
+    # method automatically or call API method directly via
+    # Bot instance: `bot.send_message(chat_id=message.chat.id, ...)`
+    await message.answer(f"{dt.datetime.now()}")
 
 @dp.message()
 async def echo_handler(message: Message) -> None:
