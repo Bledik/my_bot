@@ -11,7 +11,7 @@ from aiogram.types import Message
 import datetime as dt
 
 # Bot token can be obtained via https://t.me/BotFather
-TOKEN = "7278215203:AAEgxlwIUw4dg0rEKbjLWGC0uxNb47c8HyU"
+TOKEN = "7570727620:AAHGDL-EM8SEpBKOF_A5WENbUX77A-lgfps"
 
 # All handlers should be attached to the Router (or Dispatcher)
 
